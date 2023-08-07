@@ -1,6 +1,6 @@
 lspconfig = require "lspconfig"
 util = require "lspconfig/util"
-
+local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
@@ -41,4 +41,5 @@ lspconfig.omnisharp.setup {
 	},
 	cmd = { "dotnet", vim.env.OMNISHARP .. "\\OmniSharp.dll" },	
 	on_attach = on_attach,
+	capabilities =capabilities
 }
