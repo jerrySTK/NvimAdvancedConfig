@@ -32,7 +32,7 @@ cmp.setup({
     -- CTRL+F to scroll forwards in the description
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
     -- CTRL+SPACE to bring up completion at current Cursor location
-    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-.>'] = cmp.mapping.complete(),
     -- CTRL+e to exit suggestion and close it
     ['<C-e>'] = cmp.mapping.close(),
     -- CR (enter or return) to CONFIRM the currently selection suggestion

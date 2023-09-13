@@ -2,8 +2,16 @@ local api = require "nvim-tree.api"
 local map = vim.api.nvim_set_keymap
 
 --Vim tree
-vim.keymap.set('n','<leader>FT',api.tree.toggle)
-vim.keymap.set('n','<leader>CT',api.tree.close)
+vim.keymap.set('n','<C-n>',api.tree.toggle)
+
+vim.keymap.set('n','<leader>lpd','<CMD>Lspsaga peek_definition<CR>')
+vim.keymap.set('n','<leader>lgd','<CMD>Lspsaga goto_definition<CR>')
+
+vim.keymap.set('n','<leader>ltd','<CMD>Lspsaga goto_type_definition<CR>')
+-- Loooks for function references
+vim.keymap.set('n','<leader>lfd','<CMD>Lspsaga finder<CR>')
+
+vim.keymap.set('n','<leader>ot','<CMD>Lspsaga term_toggle<CR>')
 
 
 vim.keymap.set('n','<leader>x','<CMD>BufferLineCycleNext<CR>', {
