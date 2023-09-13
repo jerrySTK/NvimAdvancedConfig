@@ -4,16 +4,21 @@ local map = vim.api.nvim_set_keymap
 --Vim tree
 vim.keymap.set('n','<C-n>',api.tree.toggle)
 
+--end vim tree
+
+--LspSaga shjortcuts
 vim.keymap.set('n','<leader>lpd','<CMD>Lspsaga peek_definition<CR>')
 vim.keymap.set('n','<leader>lgd','<CMD>Lspsaga goto_definition<CR>')
 
 vim.keymap.set('n','<leader>ltd','<CMD>Lspsaga goto_type_definition<CR>')
--- Loooks for function references
+
 vim.keymap.set('n','<leader>lfd','<CMD>Lspsaga finder<CR>')
 
 vim.keymap.set('n','<leader>ot','<CMD>Lspsaga term_toggle<CR>')
+map('n', '<F2>', [[:Lspsaga lsp_rename ++project]], {})
 
 
+--Tabs movements
 vim.keymap.set('n','<leader>x','<CMD>BufferLineCycleNext<CR>', {
     silent = true
 })
@@ -79,7 +84,7 @@ map('n', '<F6>', [[:lua require'dap'.repl.open()<CR>]], {})
 -- Press dl to run last ran configuration (if you used f5 before it will re run it etc)
 map('n', 'dl', [[:lua require'dap'.run_last()<CR>]], {})
 
-map('n', '<C-d>', [[:NvimTreeToggle<CR> :lua require'dapui'.toggle()<CR>]], {})
+map('n', '<C-d>', [[:lua require'dapui'.toggle()<CR>]], {})
 
 --Telescope
 

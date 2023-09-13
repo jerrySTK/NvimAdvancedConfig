@@ -22,7 +22,7 @@ cmp.setup({
     end,
   },
   -- Add Mappings to control the code suggestions
-  mapping = {
+  mapping = cmp.mapping.preset.insert({
     -- Shift+TAB to go to the Previous Suggested item
     ['<S-Tab>'] = cmp.mapping.select_prev_item(),
     -- Tab to go to the next suggestion
@@ -32,7 +32,7 @@ cmp.setup({
     -- CTRL+F to scroll forwards in the description
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
     -- CTRL+SPACE to bring up completion at current Cursor location
-    ['<C-.>'] = cmp.mapping.complete(),
+    ['<C-Space>'] = cmp.mapping.complete(),
     -- CTRL+e to exit suggestion and close it
     ['<C-e>'] = cmp.mapping.close(),
     -- CR (enter or return) to CONFIRM the currently selection suggestion
@@ -41,8 +41,7 @@ cmp.setup({
       behavior = cmp.ConfirmBehavior.Insert,
       select = true,
     })
-},
-
+  }),
   -- sources are the installed sources that can be used for code suggestions
   sources = {
       { name = 'path' },
